@@ -5,7 +5,8 @@ function ApplicationForm({ onAdd }) {
 
     const [formData, setFormData] = useState({
         company_name: "",
-        role: ""
+        role: "",
+        notes: ""
     });
 
     const handleChange = (e) => {
@@ -22,7 +23,8 @@ function ApplicationForm({ onAdd }) {
 
         setFormData({
             company_name: "",
-            role: ""
+            role: "",
+            notes: ""
         });
     };
 
@@ -45,6 +47,14 @@ function ApplicationForm({ onAdd }) {
                 placeholder="Role"
                 value={formData.role}
                 onChange={handleChange}
+            />
+
+            <textarea
+                name="notes"
+                placeholder="Notes (OA date, interview details, etc.)"
+                value={formData.notes}
+                onChange={handleChange}
+                rows="3"
             />
 
             <br /><br />

@@ -8,6 +8,8 @@ function ApplicationTable({ applications, onStatusChange, onDelete }) {
                 <tr>
                     <th>Company</th>
                     <th>Role</th>
+                    <th>Applied Date</th>
+                     <th>Notes</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -26,6 +28,10 @@ function ApplicationTable({ applications, onStatusChange, onDelete }) {
                         <td>{app.company_name}</td>
 
                         <td>{app.role}</td>
+
+                        <td>{new Date(app.applied_date).toLocaleDateString()}</td>
+
+                        <td>{app.notes}</td>
 
                         <td>
                             <select

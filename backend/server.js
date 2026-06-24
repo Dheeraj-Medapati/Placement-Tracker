@@ -151,17 +151,18 @@ app.get("/applications", verifyToken, async (req, res) => {
 app.post("/applications", verifyToken, async (req, res) => {
     try {
 
-        const { company_name, role } = req.body;
+        const { company_name, role , notes} = req.body;
 
         const result = await pool.query(
             `INSERT INTO applications
-             (user_id, company_name, role)
-             VALUES($1,$2,$3)
+             (user_id, company_name, role, notes)
+             VALUES($1,$2,$3,$4)
              RETURNING *`,
             [
                 req.user.id,
                 company_name,
-                role
+                role,
+                notes
             ]
         );
 

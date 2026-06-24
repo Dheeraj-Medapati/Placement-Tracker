@@ -4,7 +4,7 @@ import ApplicationForm from "../components/ApplicationForm";
 import ApplicationTable from "../components/ApplicationTable";
 import Navbar from "../components/Navbar";
 import "./../styles/dashboard.css"
-
+import StatusChart from "../components/StatusChart";
 
 function Dashboard() {
 
@@ -228,6 +228,10 @@ function Dashboard() {
                     </div>
 
                 </div>
+
+                <h2>Application Analytics</h2>
+
+                <StatusChart stats={stats} />
 
                 <h2>My Applications</h2>
 
